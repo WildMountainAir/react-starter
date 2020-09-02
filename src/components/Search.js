@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Search extends React.component {
-
-}
+var Search = () => (
+  <div className="search">
+    <input className="controlled-form search-form" type="text" placeholder="What movie are you looking for?"/>
+    <button className='submit-button'>
+      Search
+    </button>
+  </div>
+)
 
 export default Search;

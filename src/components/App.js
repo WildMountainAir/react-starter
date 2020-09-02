@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MovieList from './MovieList.js';
+import Search from './Search.js';
+// import '../main.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -20,6 +22,9 @@ class App extends React.Component {
     return(
     <div>
       <nav className="main-nav"></nav>
+      <div>
+        <h2><Search /></h2>
+      </div>
       <div> 
         <h2><MovieList movies={this.state.movies} /></h2>
       </div>
