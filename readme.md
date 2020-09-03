@@ -11,11 +11,11 @@
 * Add a search bar so that a user may see if a movie is in the list. [COMPLETE]
 * After a user submits the search, display all matches (or partial matches) to that title. [COMPLETE]
 * Bonus: Update list based off search [COMPLETE]
-* Bonus: Handle the case of "no movie by that name found" gracefully. (https://cdn.clipart.email/af70bacc609c754bde1196c5b1e5a96b_no-clipart-gif_618-618.gif) [COMPLETE]
+* Bonus: Handle the case of "no movie by that name found" gracefully. [COMPLETE]
 
 ## Level 2
-* Add an input field for users to add movies. [NOT_STARTED]
-* Display only user added movies, not the hardcoded data. [NOT_STARTED]
+* Add an input field for users to add movies. [COMPLETE]
+* Display only user added movies, not the hardcoded data. [PARTIALLY_COMPLETE]
 
 ## Level 3 
 * Add a button to each list item that allows the user to toggle a 'watched' property. [NOT_STARTED]

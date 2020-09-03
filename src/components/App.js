@@ -32,7 +32,7 @@ class App extends React.Component {
     // ec: casing
     // console.log('unfiltered movies in searchHandler', this.state.movies);
     // console.log('string input', string);
-    var noMovie = [{title: '🙈 Oops! No Results Found'}]
+    var noMovie = [{title: '🙈 Oops! No Results Match Your Search.'}]
     var filteredMovies = this.state.movies.filter( (movie) => {
       var inputStr = string.toLowerCase();
       var currentTitle = movie.title.toLowerCase();
@@ -49,8 +49,20 @@ class App extends React.Component {
     // i: string
     // a: use input string to add a movie title to movies
     // hl: set state of movies to include added movie
-
-
+    var lowerCase = string.toLowerCase();
+    var splitString = lowerCase.split(' ');
+    var newMovieTitle = '';
+    for (var i = 0; i < splitString.length; i++) {
+      var currentWord = splitString[i];
+    //   console.log('word before casing', currentWord);
+      currentWord = currentWord[0].toUpperCase() + currentWord.slice(1);
+      // console.log('word after casing', currentWord);
+      newMovieTitle += currentWord + ' ';
+      // console.log('movie title', newMovieTitle);
+    }
+    var newMovie = {title: newMovieTitle};
+    var movieList = [newMovie, ...this.state.movies];
+    this.setState({displayedMovies:movieList});
   }
 
   render(){
