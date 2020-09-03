@@ -9,11 +9,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       movies: [
-        {title: 'Frozen'},
-        {title: 'Moana'},
-        {title: 'Bambi'},
-        {title: 'Sleeping Beauty'},
-        {title: 'Beauty and the Beast'}
+        
       ],
       displayedMovies: []
     }
@@ -32,7 +28,7 @@ class App extends React.Component {
     // ec: casing
     // console.log('unfiltered movies in searchHandler', this.state.movies);
     // console.log('string input', string);
-    var noMovie = [{title: '🙈 Oops! No Results Match Your Search.'}]
+    var noMovie = [{title: '🙈 Oops! No Results Match Your Search.'}];
     var filteredMovies = this.state.movies.filter( (movie) => {
       var inputStr = string.toLowerCase();
       var currentTitle = movie.title.toLowerCase();
@@ -54,14 +50,11 @@ class App extends React.Component {
     var newMovieTitle = '';
     for (var i = 0; i < splitString.length; i++) {
       var currentWord = splitString[i];
-    //   console.log('word before casing', currentWord);
       currentWord = currentWord[0].toUpperCase() + currentWord.slice(1);
-      // console.log('word after casing', currentWord);
       newMovieTitle += currentWord + ' ';
-      // console.log('movie title', newMovieTitle);
     }
     var newMovie = {title: newMovieTitle};
-    var movieList = [newMovie, ...this.state.movies];
+    var movieList = [newMovie, ...this.state.displayedMovies];
     this.setState({displayedMovies:movieList});
   }
 

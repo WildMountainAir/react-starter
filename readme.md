@@ -15,7 +15,7 @@
 
 ## Level 2
 * Add an input field for users to add movies. [COMPLETE]
-* Display only user added movies, not the hardcoded data. [PARTIALLY_COMPLETE]
+* Display only user added movies, not the hardcoded data. [COMPLETE]
 
 ## Level 3 
 * Add a button to each list item that allows the user to toggle a 'watched' property. [NOT_STARTED]
