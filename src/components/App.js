@@ -18,6 +18,7 @@ class App extends React.Component {
       displayedMovies: []
     }
     this.searchHandler = this.searchHandler.bind(this);
+    this.addHandler = this.addHandler.bind(this);
   }
 
   componentDidMount() {
@@ -29,24 +30,27 @@ class App extends React.Component {
     // i: string
     // action: use input string, filter through movies with input
     // ec: casing
-    console.log('unfiltered movies in searchHandler', this.state.movies);
-    console.log('string input', string);
-    var inputStr = string.toLowerCase();
-    console.log('lowercase input', inputStr)
-    var moviesUnfiltered = this.state.movies;
-    var filteredMovies = this.state.movies.filter( (string) => {
-      var allFiltered = [];
-      for (var i = 0; i < moviesUnfiltered.length; i++) {
-        var currentMovie = moviesUnfiltered[i].title.toLowerCase();
-        if (currentMovie.includes(inputStr)) {
-          allFiltered.push(moviesUnfiltered[i].title);
-        } else {
-          this.setState({displayedMovies:this.state.movies});
-        }
-      }
-      return allFiltered;
+    // console.log('unfiltered movies in searchHandler', this.state.movies);
+    // console.log('string input', string);
+    var noMovie = [{title: '🙈 Oops! No Results Found'}]
+    var filteredMovies = this.state.movies.filter( (movie) => {
+      var inputStr = string.toLowerCase();
+      var currentTitle = movie.title.toLowerCase();
+      return currentTitle.includes(inputStr);
     });
-    this.setState({displayedMovies:filteredMovies})
+    if (filteredMovies.length > 0) {
+      this.setState({displayedMovies:filteredMovies});
+    } else {
+      this.setState({displayedMovies:noMovie})
+    }
+  }
+
+  addHandler(string) {
+    // i: string
+    // a: use input string to add a movie title to movies
+    // hl: set state of movies to include added movie
+
+
   }
 
   render(){
@@ -55,7 +59,10 @@ class App extends React.Component {
     <div>
       <nav className="main-nav"></nav>
       <div>
-        <h2><Search searchHandler={this.searchHandler}/></h2>
+        <h2>< Search 
+        searchHandler={this.searchHandler} 
+        addHandler={this.addHandler} 
+        /></h2>
       </div>
       <div> 
         <h2><MovieList movies={this.state.displayedMovies}/></h2>
