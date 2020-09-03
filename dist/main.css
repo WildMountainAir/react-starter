@@ -75,14 +75,16 @@ nav {
 .main-nav {
   font-family: 'Montserrat', sans-serif;
 }
-/* SEARCH */
+/* SEARCH/ADD */
 .search-form {
   background-color: #f8fcfb;
   border: 2px solid #79d1c3;
   border-radius: 10px;
   color: #6892d5;
   font-family: 'Righteous', cursive;
-  margin: 10px 20px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 10px;
   padding: 10px 20px;
   width: 200px;
 }
@@ -93,7 +95,8 @@ nav {
   border-radius: 10px;
   color: #6892d5;
   font-family: 'Righteous', cursive;
-  margin: 10px 20px;
+  margin-bottom: 10px;
+  margin-right: 9px;
   padding: 10px 20px;
   width: auto;
 }
@@ -104,7 +107,29 @@ nav {
   color: #6892d5;
   cursor: crosshair;
   font-family: 'Righteous', cursive;
-  margin: 10px 20px;
+  margin-bottom: 10px;
+  margin-right: 9px;
+  padding: 10px 20px;
+  width: auto;
+}
+.add-button {
+  background-color: #f8fcfb;
+  border: 2px solid #79d1c3;
+  border-radius: 10px;
+  color: #6892d5;
+  font-family: 'Righteous', cursive;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  width: auto;
+}
+.add-button:hover {
+  background-color: #c9fdd7;
+  border: 2px solid #f8fcfb;
+  border-radius: 10px;
+  color: #6892d5;
+  cursor: crosshair;
+  font-family: 'Righteous', cursive;
+  margin-bottom: 10px;
   padding: 10px 20px;
   width: auto;
 }
@@ -117,6 +142,54 @@ nav {
   width: 400px;
   max-height: max-content;
 }
+
+.unwatched-button {
+  background-color: #f8fcfb;
+  border: 2px solid #79d1c3;
+  border-radius: 10px;
+  color: #6892d5;
+  font-family: 'Righteous', cursive;
+  margin-bottom: 10px;
+  margin-left: 12px;
+  padding: 10px 20px;
+  width: 45%;
+}
+.unwatched-button:focus {
+  background-color: #c9fdd7;
+  border: 2px solid #f8fcfb;
+  border-radius: 10px;
+  color: #6892d5;
+  cursor: crosshair;
+  font-family: 'Righteous', cursive;
+  margin-bottom: 10px;
+  margin-left: 12px;
+  padding: 10px 20px;
+  width: 45%;
+}
+.watched-button {
+  background-color: #f8fcfb;
+  border: 2px solid #79d1c3;
+  border-radius: 10px;
+  color: #6892d5;
+  font-family: 'Righteous', cursive;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding: 10px 20px;
+  width: 45%;
+}
+.watched-button:focus {
+  background-color: #c9fdd7;
+  border: 2px solid #f8fcfb;
+  border-radius: 10px;
+  color: #6892d5;
+  cursor: crosshair;
+  font-family: 'Righteous', cursive;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding: 10px 20px;
+  width: 45%;
+}
+
 .movie-entry {
   background-color: #f8fcfb;
   border: 2px solid #79d1c3;
@@ -125,7 +198,6 @@ nav {
   margin-bottom: 4px;
   padding: 10px 20px;
   width: auto;
-  font-weight: 600;
 }
 
 .movie-entry:hover {
@@ -137,5 +209,4 @@ nav {
   margin-bottom: 4px;
   padding: 10px 20px;
   width: auto;
-  font-weight: 600;
 }
