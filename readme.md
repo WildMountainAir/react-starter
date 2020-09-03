@@ -8,7 +8,7 @@
 * Display a list of movies from hardcoded data. [COMPLETE]
 
 ## Level 1
-* Add a search bar so that a user may see if a movie is in the list.
+* Add a search bar so that a user may see if a movie is in the list. [IN_PROGRESS]
 * After a user submits the search, display all matches (or partial matches) to that title. [IN_PROGRESS]
 * Bonus: Update list based off search [IN_PROGRESS]
 * Bonus: Handle the case of "no movie by that name found" gracefully. (https://cdn.clipart.email/af70bacc609c754bde1196c5b1e5a96b_no-clipart-gif_618-618.gif) [IN_PROGRESS]

@@ -115,6 +115,7 @@ nav {
   margin-left: 20px;
   padding: 5px;
   width: 400px;
+  max-height: max-content;
 }
 .movie-entry {
   background-color: #f8fcfb;

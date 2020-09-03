@@ -15,27 +15,50 @@ class App extends React.Component {
         {title: 'Sleeping Beauty'},
         {title: 'Beauty and the Beast'}
       ],
+      displayedMovies: []
     }
+    this.searchHandler = this.searchHandler.bind(this);
   }
 
-  // method that will take in form input & update searchValue state to form value
-  //  clear form on submit? or change to "search results for: {form value}"
-  //  if value is found
-  //    update searchValue state to value from form
-  //    (method?) clear movie list 
-  //    (method?) update movie list with results that match search form value
-  //  else if value doesn't return result?
-  //    (method or just an alert?) alert message or gif
+  componentDidMount() {
+    this.setState({displayedMovies:this.state.movies});
+  }
+
+  // pass the info 
+  searchHandler(string) {
+    // i: string
+    // action: use input string, filter through movies with input
+    // ec: casing
+    console.log('unfiltered movies in searchHandler', this.state.movies);
+    console.log('string input', string);
+    var inputStr = string.toLowerCase();
+    console.log('lowercase input', inputStr)
+    var moviesUnfiltered = this.state.movies;
+    var filteredMovies = this.state.movies.filter( (string) => {
+      var allFiltered = [];
+      for (var i = 0; i < moviesUnfiltered.length; i++) {
+        var currentMovie = moviesUnfiltered[i].title.toLowerCase();
+        if (currentMovie.includes(inputStr)) {
+          allFiltered.push(moviesUnfiltered[i].title);
+        } else {
+          this.setState({displayedMovies:this.state.movies});
+        }
+      }
+      return allFiltered;
+    });
+    this.setState({displayedMovies:filteredMovies})
+  }
 
   render(){
+    console.log('displayed movies in render', this.state.displayedMovies)
     return(
     <div>
       <nav className="main-nav"></nav>
       <div>
-        <h2><Search /></h2>
+        <h2><Search searchHandler={this.searchHandler}/></h2>
       </div>
       <div> 
-        <h2><MovieList movies={this.state.movies}/></h2>
+        <h2><MovieList movies={this.state.displayedMovies}/></h2>
       </div>
     </div>
   )}
