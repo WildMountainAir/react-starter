@@ -2,7 +2,6 @@ import React from 'react';
 
 import MovieList from './MovieList.js';
 import Search from './Search.js';
-// import '../main.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -29,8 +28,6 @@ class App extends React.Component {
     // i: string
     // action: use input string, filter through movies with input
     // ec: casing
-    // console.log('unfiltered movies in searchHandler', this.state.movies);
-    // console.log('string input', string);
     var noMovie = [{title: '🙈 Oops! No Results Found.'}];
     var filteredMovies = this.state.movies.filter( (movie) => {
       var inputStr = string.toLowerCase();
@@ -56,7 +53,7 @@ class App extends React.Component {
       currentWord = currentWord[0].toUpperCase() + currentWord.slice(1);
       newMovieTitle += currentWord + ' ';
     }
-    var newMovie = {title: newMovieTitle};
+    var newMovie = {title: newMovieTitle, watch:false};
     var movieList = [newMovie, ...this.state.displayedMovies];
     this.setState({displayedMovies:movieList, movies:movieList});
   }
@@ -65,32 +62,38 @@ class App extends React.Component {
     // i: string - title of movie clicked
     // a: add watched movie to watched list, or add to unwatched
     // hl: move movie from unwatched list to watched & visa-versa
-
-    var newWatched = {title: string};
-    var movieListWatched = [newWatched, ...this.state.watchedMovies];
-    var movieListUnwatched = this.state.unwatchedMovies;
-    var filteredUnwatched = movieListUnwatched.filter( (movie) => {
-      var inputStr = string.toLowerCase();
-      var currentTitle = movie.title.toLowerCase();
-      return !currentTitle.includes(inputStr);
+    var myMovies = this.state.movies.map( (movie) => {
+      if (movie.title !== string) {
+        return movie;
+      } else {
+        return {title:movie.title, watch:!movie.watch}
+      }
     });
-    this.setState({watchedMovies:movieListWatched, unwatchedMovies:filteredUnwatched});
+    var watchedMov = myMovies.filter((movie) => {
+      return movie.watch;
+    })
+    var unwatchedMov = myMovies.filter((movie) => {
+      return movie.watch === false;
+    })
+    this.setState({movies:myMovies, watchedMovies:watchedMov, unwatchedMovies:unwatchedMov});
   }
 
   displayUnwatched() {
+    // displays unwatched movies
     this.setState({displayedMovies:this.state.unwatchedMovies});
   }
 
   displayWatched() {
+    // displays watched movies
     this.setState({displayedMovies:this.state.watchedMovies});
   }
 
   displayAll() {
+    // displays all movies
     this.setState({displayedMovies:this.state.movies});
   }
 
   render(){
-    console.log('displayed movies in render', this.state.displayedMovies)
     return(
     <div>
       <nav className="main-nav"></nav>
@@ -113,5 +116,4 @@ class App extends React.Component {
   )}
 }
 
-// ReactDOM.render(<App />, document.getElementById('app'));
 export default App;
