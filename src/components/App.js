@@ -31,7 +31,7 @@ class App extends React.Component {
     // ec: casing
     // console.log('unfiltered movies in searchHandler', this.state.movies);
     // console.log('string input', string);
-    var noMovie = [{title: '🙈 Oops! No Results Match Your Search.'}];
+    var noMovie = [{title: '🙈 Oops! No Results Found.'}];
     var filteredMovies = this.state.movies.filter( (movie) => {
       var inputStr = string.toLowerCase();
       var currentTitle = movie.title.toLowerCase();

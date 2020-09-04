@@ -249,8 +249,7 @@ nav {
   color: #6892d5;
   font-family: 'Righteous', cursive;
   font-size: 10px;
-  float: right;
-  margin-right: 20px;
+  margin-left: 20px;
   padding: 5px 10px;
   width: auto;
 }
@@ -262,7 +261,7 @@ nav {
   cursor: crosshair;
   font-family: 'Righteous', cursive;
   font-size: 10px;
-  margin-right: 20px;
+  margin-left: 20px;
   padding: 5px 10px;
   width: auto;
 }
