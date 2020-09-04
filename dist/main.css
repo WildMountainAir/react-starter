@@ -151,9 +151,10 @@ nav {
   color: #6892d5;
   font-family: 'Righteous', cursive;
   margin-bottom: 10px;
-  margin-left: 12px;
+  margin-left: 10px;
+  margin-top: 10px;
   padding: 10px 20px;
-  width: 45%;
+  width: 30%;
 }
 .unwatched-button:focus {
   background-color: #c9fdd7;
@@ -163,9 +164,10 @@ nav {
   cursor: crosshair;
   font-family: 'Righteous', cursive;
   margin-bottom: 10px;
-  margin-left: 12px;
+  margin-left: 10px;
+  margin-top: 10px;
   padding: 10px 20px;
-  width: 45%;
+  width: 30%;
 }
 .watched-button {
   background-color: #f8fcfb;
@@ -175,8 +177,9 @@ nav {
   font-family: 'Righteous', cursive;
   margin-bottom: 10px;
   margin-left: 10px;
+  margin-top: 10px;
   padding: 10px 20px;
-  width: 45%;
+  width: 30%;
 }
 .watched-button:focus {
   background-color: #c9fdd7;
@@ -187,8 +190,35 @@ nav {
   font-family: 'Righteous', cursive;
   margin-bottom: 10px;
   margin-left: 10px;
+  margin-top: 10px;
   padding: 10px 20px;
-  width: 45%;
+  width: 30%;
+}
+
+.all-button {
+  background-color: #f8fcfb;
+  border: 2px solid #79d1c3;
+  border-radius: 10px;
+  color: #6892d5;
+  font-family: 'Righteous', cursive;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  width: 30%;
+}
+.all-button:focus {
+  background-color: #c9fdd7;
+  border: 2px solid #f8fcfb;
+  border-radius: 10px;
+  color: #6892d5;
+  cursor: crosshair;
+  font-family: 'Righteous', cursive;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  width: 30%;
 }
 
 .movie-entry {
@@ -209,5 +239,30 @@ nav {
   cursor: crosshair;
   margin-bottom: 4px;
   padding: 10px 20px;
+  width: auto;
+}
+
+.movie-watched-button {
+  background-color: #f8fcfb;
+  border: 2px solid #79d1c3;
+  border-radius: 10px;
+  color: #6892d5;
+  font-family: 'Righteous', cursive;
+  font-size: 10px;
+  float: right;
+  margin-right: 20px;
+  padding: 5px 10px;
+  width: auto;
+}
+.movie-watched-button:focus {
+  background-color: #6892d5;
+  border: 2px solid #f8fcfb;
+  border-radius: 10px;
+  color: #f8fcfb;
+  cursor: crosshair;
+  font-family: 'Righteous', cursive;
+  font-size: 10px;
+  margin-right: 20px;
+  padding: 5px 10px;
   width: auto;
 }

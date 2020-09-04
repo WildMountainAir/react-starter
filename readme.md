@@ -18,8 +18,8 @@
 * Display only user added movies, not the hardcoded data. [COMPLETE]
 
 ## Level 3 
-* Add a button to each list item that allows the user to toggle a 'watched' property. [NOT_STARTED]
-* Add two buttons to allow the users to toggle between a list of 'watched' movies and movies 'to watch'. [NOT_STARTED]
+* Add a button to each list item that allows the user to toggle a 'watched' property. [COMPLETE]
+* Add two buttons to allow the users to toggle between a list of 'watched' movies and movies 'to watch'. [COMPLETE]
 
 ## Level 4
 *  Add a panel of movie information that appears when the title is clicked (consider starting with hardcoded information) [NOT_STARTED]

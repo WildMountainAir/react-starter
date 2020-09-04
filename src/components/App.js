@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+
 import MovieList from './MovieList.js';
 import Search from './Search.js';
 // import '../main.css';
@@ -8,20 +8,23 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: [
-        
-      ],
-      displayedMovies: []
+      movies: [],
+      displayedMovies: [],
+      watchedMovies: [],
+      unwatchedMovies: []
     }
     this.searchHandler = this.searchHandler.bind(this);
     this.addHandler = this.addHandler.bind(this);
+    this.watchHandler = this.watchHandler.bind(this);
+    this.displayUnwatched = this.displayUnwatched.bind(this);
+    this.displayWatched = this.displayWatched.bind(this);
+    this.displayAll = this.displayAll.bind(this);
   }
 
   componentDidMount() {
     this.setState({displayedMovies:this.state.movies});
   }
 
-  // pass the info 
   searchHandler(string) {
     // i: string
     // action: use input string, filter through movies with input
@@ -55,7 +58,35 @@ class App extends React.Component {
     }
     var newMovie = {title: newMovieTitle};
     var movieList = [newMovie, ...this.state.displayedMovies];
-    this.setState({displayedMovies:movieList});
+    this.setState({displayedMovies:movieList, movies:movieList});
+  }
+
+  watchHandler(string) {
+    // i: string - title of movie clicked
+    // a: add watched movie to watched list, or add to unwatched
+    // hl: move movie from unwatched list to watched & visa-versa
+
+    var newWatched = {title: string};
+    var movieListWatched = [newWatched, ...this.state.watchedMovies];
+    var movieListUnwatched = this.state.unwatchedMovies;
+    var filteredUnwatched = movieListUnwatched.filter( (movie) => {
+      var inputStr = string.toLowerCase();
+      var currentTitle = movie.title.toLowerCase();
+      return !currentTitle.includes(inputStr);
+    });
+    this.setState({watchedMovies:movieListWatched, unwatchedMovies:filteredUnwatched});
+  }
+
+  displayUnwatched() {
+    this.setState({displayedMovies:this.state.unwatchedMovies});
+  }
+
+  displayWatched() {
+    this.setState({displayedMovies:this.state.watchedMovies});
+  }
+
+  displayAll() {
+    this.setState({displayedMovies:this.state.movies});
   }
 
   render(){
@@ -65,12 +96,18 @@ class App extends React.Component {
       <nav className="main-nav"></nav>
       <div>
         <h2>< Search 
-        searchHandler={this.searchHandler} 
-        addHandler={this.addHandler} 
+          searchHandler={this.searchHandler} 
+          addHandler={this.addHandler} 
         /></h2>
       </div>
       <div> 
-        <h2><MovieList movies={this.state.displayedMovies}/></h2>
+        <h2><MovieList 
+        movies={this.state.displayedMovies} 
+        watchHandler={this.watchHandler}
+        displayUnwatched={this.displayUnwatched}
+        displayWatched={this.displayWatched}
+        displayAll={this.displayAll}
+        /></h2>
       </div>
     </div>
   )}
